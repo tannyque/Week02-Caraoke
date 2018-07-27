@@ -9,7 +9,7 @@ class SongsTest < MiniTest::Test
   end
 
   def test_song_has_name()
-
+    assert_equal("Bitter Sweet Symphony", @song1.name())
   end
 
 end
