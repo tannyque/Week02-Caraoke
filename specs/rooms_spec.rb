@@ -7,7 +7,7 @@ require_relative("../songs")
 class RoomTest < MiniTest::Test
 
   def setup()
-    @room1 = Room.new("Main")
+    @room1 = Room.new("Pop", 5)
     @guest1 = Guest.new("Pim")
     @guest2 = Guest.new("Craig")
     @song1 = Song.new("Bitter Sweet Symphony")
@@ -15,7 +15,7 @@ class RoomTest < MiniTest::Test
   end
 
   def test_room_has_name()
-    assert_equal("Main", @room1.name)
+    assert_equal("Pop", @room1.name)
   end
 
   def test_room_has_zero_guests()
@@ -38,6 +38,10 @@ class RoomTest < MiniTest::Test
     @room1.add_song_to_playlist(@song1)
     @room1.add_song_to_playlist(@song2)
     assert_equal(2, @room1.playlist.count())
+  end
+
+  def test_room_capacity
+    assert_equal(5, @room1.capacity())
   end
 
 end

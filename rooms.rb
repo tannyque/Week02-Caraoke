@@ -1,9 +1,10 @@
 class Room
 
-  attr_reader :name, :playlist
+  attr_reader :name, :guestlist, :playlist, :capacity
 
-  def initialize(name)
+  def initialize(name, capacity)
     @name = name
+    @capacity = capacity
     @guestlist = []
     @playlist = []
   end
@@ -21,7 +22,7 @@ class Room
   end
 
   def add_song_to_playlist(song)
-    @playlist.push(song)
+    @playlist << song
   end
 
 end
