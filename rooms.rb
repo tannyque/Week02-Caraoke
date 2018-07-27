@@ -4,16 +4,20 @@ class Room
 
   def initialize(name)
     @name = name
-    @guests = []
-    @songs = []
+    @guestlist = []
+    @playlist = []
   end
 
   def guest_count()
-    return @guests.size()
+    return @guestlist.size()
   end
 
   def check_in_guest(guest)
-    @guests.push(guest)
+    @guestlist.push(guest)
+  end
+
+  def check_out_guest(guest)
+    @guestlist.delete(guest)
   end
 
 end
