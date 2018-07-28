@@ -6,4 +6,8 @@ class Bar
     @till = till
   end
 
+  def add_money_to_till(money)
+    @till += money
+  end
+
 end
