@@ -14,8 +14,8 @@ class RoomTest < MiniTest::Test
     @guest4 = Guest.new("Jane", 10)
     @guest5 = Guest.new("Anne", 15)
     @guest6 = Guest.new("Fraser", 20)
-    @song1 = Song.new("Bitter Sweet Symphony")
-    @song2 = Song.new("Somewhere Over The Rainbow")
+    @song1 = Song.new("Bitter Sweet Symphony", "The Verve")
+    @song2 = Song.new("Somewhere Over The Rainbow", "Israel Kamakawiwoʻole")
   end
 
   def test_room_has_name()
