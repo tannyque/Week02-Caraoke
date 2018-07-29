@@ -27,10 +27,16 @@ class Room
   end
 
   def check_room_capacity()
-    if @guestlist.count() <= @capacity
+    if @guestlist.count() < @capacity
       check_in_guest()
     else
       return "Room is full"
+    end
+  end
+
+  def check_favourite_song_in_playlist(guest)
+    if @playlist.include?(guest.favourite_song())
+      return "Whoo!"
     end
   end
 

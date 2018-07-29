@@ -1,13 +1,13 @@
 class Bar
 
-  attr_reader :total
+  attr_reader :till
 
-  def initialize(total)
-    @total = total
+  def initialize(till)
+    @till = till
   end
 
-  def add_money_to_bar_tab(money)
-    @total += money
+  def add_money_to_till(money)
+    @till += money
   end
 
 end
