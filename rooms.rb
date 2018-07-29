@@ -34,6 +34,10 @@ class Room
     end
   end
 
+  def check_guest_money(guest)
+    guest.money() >= @entry_fee
+  end
+
   def check_favourite_song_in_playlist(guest)
     if @playlist.include?(guest.favourite_song())
       return "Whoo!"

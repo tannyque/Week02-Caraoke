@@ -3,6 +3,7 @@ require("minitest/rg")
 require_relative("../rooms")
 require_relative("../guests")
 require_relative("../songs")
+require_relative("../bar")
 
 class RoomTest < MiniTest::Test
 
@@ -15,11 +16,12 @@ class RoomTest < MiniTest::Test
     @song6 = Song.new("What the Water Gave Me", "Florence + the Machine")
     @room1 = Room.new("Pop", 5, 4)
     @guest1 = Guest.new("Pim", 7, @song1)
-    @guest2 = Guest.new("Craig", 3, @song2)
+    @guest2 = Guest.new("Craig", 8, @song2)
     @guest3 = Guest.new("Tanny", 5, @song3)
     @guest4 = Guest.new("Jane", 10, @song4)
     @guest5 = Guest.new("Anne", 4, @song5)
     @guest6 = Guest.new("Fraser", 15, @song6)
+    @bar = Bar.new(10)
   end
 
   def test_room_has_name()
@@ -65,6 +67,10 @@ class RoomTest < MiniTest::Test
 
   def test_room_entry_fee()
     assert_equal(4, @room1.entry_fee())
+  end
+
+  def test_guest_has_enough_money()
+    assert_equal(true, @room1.check_guest_money(@guest1))
   end
 
   def test_favourite_song_in_playlist()
