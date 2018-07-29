@@ -5,9 +5,9 @@ class Room
   def initialize(name, capacity, entry_fee)
     @name = name
     @capacity = capacity
+    @entry_fee = entry_fee
     @guestlist = []
     @playlist = []
-    @entry_fee = entry_fee
   end
 
   def guest_count()
